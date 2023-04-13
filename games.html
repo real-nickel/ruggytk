@@ -28,8 +28,92 @@
         <h2>
           Below is a list of games that you can play:
     </h2>
-        <a href="super-soccer-noggins.html">
-      <img src="path/to/image.jpg" alt="Super Soccer Noggins">
-    </a>
+
+    <style>
+body {font-family: "HK Grotesk", HK Grotesk;}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+
+</style>
+<div id="Super Soccer Noggins" class="tabcontent">
+  <h1>Super Soccer Noggins</h1>
+  <iframe
+  src="https://w8.snokido.com/games/html5/super-soccer-noggins/index.html"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+  "
+>
+  Your browser doesn't support this.
+</iframe>
+
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h1>Paris</h1>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h1>Tokyo</h1>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<div id="Oslo" class="tabcontent">
+  <h1>Oslo</h1>
+  <p>Oslo is the capital of Norway.</p>
+</div>
+
+<button class="tablink" onclick="openCity('#', this, 'blue')" id="defaultOpen">Select a game</button>
+<button class="tablink" onclick="openCity('Super Soccer Noggins', this, 'green')">Super Soccer Noggins</button>
+<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
   </body>
 </html>
